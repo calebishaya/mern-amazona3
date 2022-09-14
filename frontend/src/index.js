@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import { HelmetProvider } from 'react-helmet-async'; // Named Import
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
@@ -9,8 +9,7 @@ import { StoreProvider } from './Store';
 import { BrowserRouter } from 'react-router-dom';
 import { PayPalScriptProvider } from '@paypal/react-paypal-js';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <StoreProvider>
@@ -21,7 +20,8 @@ root.render(
         </HelmetProvider>
       </StoreProvider>
     </BrowserRouter>
-  </React.StrictMode>
+  </React.StrictMode>,
+  document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
