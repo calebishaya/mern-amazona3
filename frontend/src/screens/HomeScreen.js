@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { useEffect, useReducer } from 'react';
 import axios from 'axios';
-import logger from 'use-reducer-logger';
 import { Row } from 'react-bootstrap';
 import Col from 'react-bootstrap/Col';
 import Product from '../components/Product';
@@ -36,7 +35,7 @@ function HomeScreen() {
     }
   }, [navigate, userInfo]); */
 
-  const [{ loading, error, products }, dispatch] = useReducer(logger(reducer), {
+  const [{ loading, error, products }, dispatch] = useReducer(reducer, {
     loading: true,
     products: [],
     error: '',
